@@ -29,16 +29,14 @@ Promise.all(downloadPromises)
 	.then(images=>{
 		images.forEach(img=>output.append(img))
 	})
-.catch(error=>err.textContent=error)
+	.catch(error => {
+		err.textContent = error || "An unknown error occurred";
+	})
 .finally(()=>{
-	loading.style.display:"none";
+	loading.style.display="none";
 })
 }
 btn.addEventListener("click", downloadImages)
-
-
-
-
 
 
 
